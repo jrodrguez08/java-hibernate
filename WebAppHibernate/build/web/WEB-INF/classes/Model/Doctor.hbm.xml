@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 9, 2016 4:38:11 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Doctor" table="doctor" catalog="proyecto" optimistic-lock="version">
+        <id name="userId" type="string">
+            <column name="userId" length="45" />
+            <generator class="foreign">
+                <param name="property">user</param>
+            </generator>
+        </id>
+        <one-to-one name="user" class="Model.User" constrained="true"></one-to-one>
+        <property name="phone" type="string">
+            <column name="phone" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>

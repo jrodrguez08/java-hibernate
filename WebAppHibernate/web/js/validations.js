@@ -5,7 +5,7 @@
  */
 
 $(function () {
-    
+
     $("#login").validate({
         rules: {
             user: "required",
@@ -29,7 +29,10 @@ $(function () {
                 required: true,
                 equalTo: "#password"
             },
-            phone: "required",
+            phone: {
+                required: true,
+                digits: true
+            },
             email: {
                 required: true,
                 email: true
@@ -43,14 +46,17 @@ $(function () {
                 required: "Por favor confirme su contrase&ntilde;a",
                 equalTo: "Debe ser igual a la contrase&ntilde;a antes provista"
             },
-            phone: "Por favor ingrese un n&uacute;mero de tel&eacute;fono v&aacute;lido",
+            phone: {
+                required: "Por favor ingrese un n&uacute;mero de tel&eacute;fono v&aacute;lido",
+                digits: "Por favor ingrese s&oacute;lo n&uacute;meros"
+            },
             email: "Por favor ingrese un email v&aacute;lido"
         },
         submitHandler: function (form) {
             form.submit();
         }
     });
-    
+
     $("#addPatient").validate({
         rules: {
             fullName: "required",
@@ -60,7 +66,7 @@ $(function () {
                 required: true,
                 equalTo: "#password"
             },
-            birthDate: { 
+            birthDate: {
                 required: true
             },
             address: "required",
@@ -78,8 +84,8 @@ $(function () {
                 required: "Por favor confirme su contrase&ntilde;a",
                 equalTo: "Debe ser igual a la contrase&ntilde;a antes provista"
             },
-            birthDate: { 
-               required: "Por favor ingrese la fecha de nacimiento del paciente"
+            birthDate: {
+                required: "Por favor ingrese la fecha de nacimiento del paciente"
             },
             address: "Por favor ingrese la direcci&oacute;n del paciente",
             phone: "Por favor ingrese un n&uacute;mero de tel&eacute;fono v&aacute;lido",

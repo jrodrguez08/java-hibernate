@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/css/bootstrap.min.css">
+        <link href="css/css/datepicker.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/css/style.css">
         <title>Administrador - Agregar Paciente</title>
     </head>
@@ -28,11 +29,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Buscar M&eacute;dicos</a></li>
+                        <li><a href="adminListDoctor.jsp">Buscar M&eacute;dicos</a></li>
                         <li><a href="adminAddDoctor.jsp">Agregar M&eacute;dicos</a></li>
-                        <li><a href="#">Editar M&eacute;dicos</a></li>
+                        <li><a href="adminEditDoctor.jsp">Editar M&eacute;dicos</a></li>
                         <li><a href="adminListPatient.jsp">Buscar Pacientes</a></li>
-                        <li><a href="adminAddPatient.jsp">Agregar Pacientes</a></li>
                         <li><a href="#">Editar Pacientes</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="birthDate">Fecha de Nacimiento</label>
-                                    <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="Fecha de Nacimiento">
+                                    <input type="date" class="form-control" id="birthDate" name="birthDate" data-date-format="mm/dd/yyyy" placeholder="Fecha de Nacimiento">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Direcci&oacute;n</label>
@@ -87,7 +87,7 @@
                                     <label for="email">E-mail</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Agregar</button>
+                                <button type="submit" class="btn btn-primary">Agregar</button> <a class="btn btn-default" href="admin.jsp" role="button">Cancelar</a>
                             </form>
                         </div>
                     </div>
@@ -97,6 +97,8 @@
         <script src="js/jquery-2.2.3.min.js" type="text/javascript"></script>
         <script src="js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="js/validations.js" type="text/javascript"></script>
+        <script src="js/misc.js" type="text/javascript"></script>
     </body>
 </html>

@@ -69,5 +69,32 @@ public class ListService {
         }
         return listPatient;
     }
+    
+    public Doctor getDoctor(String userId) {
+        Doctor doctor = new Doctor();
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            List doctors = session.createQuery("from Doctor").list();
+            for (Iterator it = doctors.iterator(); it.hasNext();) {
+                Doctor dummy = (Doctor) it.next();
+                if(dummy.getUserId().equals(userId)){
+                    doctor = dummy;
+                }
+            }
+            tx.commit();
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return doctor;
+    }
 
 }

@@ -28,9 +28,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Buscar M&eacute;dicos</a></li>
-                        <li><a href="adminAddDoctor.jsp">Agregar M&eacute;dicos</a></li>
-                        <li><a href="#">Editar M&eacute;dicos</a></li>
+                        <li><a href="adminListDoctor.jsp">Buscar M&eacute;dicos</a></li>
+                        <li><a href="adminEditDoctor.jsp">Editar M&eacute;dicos</a></li>
                         <li><a href="adminListPatient.jsp">Buscar Pacientes</a></li>
                         <li><a href="adminAddPatient.jsp">Agregar Pacientes</a></li>
                         <li><a href="#">Editar Pacientes</a></li>
@@ -79,7 +78,7 @@
                                     <label for="email">E-mail</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Agregar</button>
+                                <button type="submit" class="btn btn-primary">Agregar</button> <a class="btn btn-default" href="admin.jsp" role="button">Cancelar</a>
                             </form>
                         </div>
                     </div>

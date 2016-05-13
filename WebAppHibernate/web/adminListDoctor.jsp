@@ -41,9 +41,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="adminListDoctor.jsp">Buscar M&eacute;dicos</a></li>
                         <li><a href="adminAddDoctor.jsp">Agregar M&eacute;dicos</a></li>
-                        <li><a href="#">Editar M&eacute;dicos</a></li>
+                        <li><a href="adminEditDoctor.jsp">Editar M&eacute;dicos</a></li>
                         <li><a href="adminListPatient.jsp">Buscar Pacientes</a></li>
                         <li><a href="adminAddPatient.jsp">Agregar Pacientes</a></li>
                         <li><a href="#">Editar Pacientes</a></li>
@@ -73,7 +72,6 @@
                                 <th>Usuario</th>
                                 <th>Tel&eacute;fono</th>
                                 <th>Email</th>
-                                <th>Editar</th>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${listDoctors}" var="doctor">
@@ -82,7 +80,6 @@
                                             <td><c:out value="${doctor.userId}"></c:out></td>
                                             <td><c:out value="${doctor.phone}"></c:out></td>
                                             <td><c:out value="${doctor.email}"></c:out></td>
-                                            <td><a href="#">Editar</a></td>
                                             </tr>
                                     </c:forEach>
                                 </tbody>

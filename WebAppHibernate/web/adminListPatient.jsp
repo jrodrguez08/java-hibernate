@@ -42,8 +42,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="adminListDoctor.jsp">Buscar M&eacute;dicos</a></li>
                         <li><a href="adminAddDoctor.jsp">Agregar M&eacute;dicos</a></li>
-                        <li><a href="#">Editar M&eacute;dicos</a></li>
-                        <li><a href="adminListPatient.jsp">Buscar Pacientes</a></li>
+                        <li><a href="adminEditDoctor.jsp">Editar M&eacute;dicos</a></li>
                         <li><a href="adminAddPatient.jsp">Agregar Pacientes</a></li>
                         <li><a href="#">Editar Pacientes</a></li>
                     </ul>
@@ -74,7 +73,6 @@
                                 <th>Tel&eacute;fono</th>
                                 <th>Direccion</th>
                                 <th>Email</th>
-                                <th>Editar</th>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${listPatients}" var="patient">
@@ -85,7 +83,6 @@
                                             <td><c:out value="${patient.phone}"></c:out></td>
                                             <td><c:out value="${patient.address}"></c:out></td>
                                             <td><c:out value="${patient.email}"></c:out></td>
-                                            <td><a href="#">Editar</a></td>
                                             </tr>
                                     </c:forEach>
                                 </tbody>

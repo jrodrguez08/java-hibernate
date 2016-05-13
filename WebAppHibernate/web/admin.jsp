@@ -30,7 +30,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="adminListDoctor.jsp">Buscar M&eacute;dicos</a></li>
                         <li><a href="adminAddDoctor.jsp">Agregar M&eacute;dicos</a></li>
-                        <li><a href="#">Editar M&eacute;dicos</a></li>
+                        <li><a href="adminEditDoctor.jsp">Editar M&eacute;dicos</a></li>
                         <li><a href="adminListPatient.jsp">Buscar Pacientes</a></li>
                         <li><a href="adminAddPatient.jsp">Agregar Pacientes</a></li>
                         <li><a href="#">Editar Pacientes</a></li>
@@ -68,8 +68,8 @@
                                         <p class="text-center"><a href="adminAddDoctor.jsp">Agregar M&eacute;dicos</a></p>
                                     </div>
                                     <div class="col-xs-4 col-sm-4 col-md-4">
-                                        <p class="text-center icon"><a href="#"><span class="glyphicon glyphicon-pencil"></a></span></p>
-                                        <p class="text-center"><a href="#">Editar M&eacute;dicos</a></p>
+                                        <p class="text-center icon"><a href="adminEditDoctor.jsp"><span class="glyphicon glyphicon-pencil"></a></span></p>
+                                        <p class="text-center"><a href="adminEditDoctor.jsp">Editar M&eacute;dicos</a></p>
                                     </div>
                                 </div>
                             </div>

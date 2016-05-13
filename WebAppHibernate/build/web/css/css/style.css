@@ -63,3 +63,7 @@ body {
 .table {
     background-color: #ffffff;
 }
+
+.hide {
+    display: none;
+}

@@ -30,8 +30,7 @@ $(function () {
                 equalTo: "#password"
             },
             phone: {
-                required: true,
-                digits: true
+                required: true
             },
             email: {
                 required: true,
@@ -47,8 +46,7 @@ $(function () {
                 equalTo: "Debe ser igual a la contrase&ntilde;a antes provista"
             },
             phone: {
-                required: "Por favor ingrese un n&uacute;mero de tel&eacute;fono v&aacute;lido",
-                digits: "Por favor ingrese s&oacute;lo n&uacute;meros"
+                required: "Por favor ingrese un n&uacute;mero de tel&eacute;fono v&aacute;lido"
             },
             email: "Por favor ingrese un email v&aacute;lido"
         },

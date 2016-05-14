@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/css/bootstrap.min.css">
         <link href="css/css/datepicker.css" rel="stylesheet" type="text/css"/>
+        <link href="css/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/css/style.css">
         <title>Administrador - Agregar Paciente</title>
     </head>
@@ -81,7 +82,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Tel&eacute;fono</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Tel&eacute;fono">
+                                    <input type="text" class="form-control" id="phone" name="phone" data-mask="9999-99-99" placeholder="Tel&eacute;fono">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">E-mail</label>
@@ -98,6 +99,7 @@
         <script src="js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="js/jasny-bootstrap.min.js" type="text/javascript"></script>
         <script src="js/validations.js" type="text/javascript"></script>
         <script src="js/misc.js" type="text/javascript"></script>
     </body>

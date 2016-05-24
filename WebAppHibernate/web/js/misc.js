@@ -6,6 +6,9 @@
 
 $(function () {
     
-    $('#birthDate').datepicker()
+    $('#birthDate').datepicker();
+    
+    $('#appointmentDate').datepicker();
+    
 
 });

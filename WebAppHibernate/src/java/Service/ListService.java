@@ -150,19 +150,19 @@ public class ListService {
     }
     
     public int getLastPatientAppointmentId(String userId) {
-        int patientAppointmentId = 1;
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
         session = sessionFactory.openSession();
         Transaction tx = null;
+        Patientappointments p = null;
         try {
             tx = session.getTransaction();
             tx.begin();
             List patientAppointments = session.createQuery("from PatientAppointments where patientRecordId='"+userId+"'").list();
-                for (Iterator it = patientAppointments.iterator(); it.hasNext();) {
-                    //Patientappointments dummy = (Patientappointments) it.next();
-                    patientAppointmentId = patientAppointmentId++;//Integer.parseInt(dummy.getId().toString()); 
-                }
+               Iterator it = patientAppointments.iterator();
+               while(it.hasNext()){
+                   p = (Patientappointments) it.next();
+               }
             tx.commit();
         } catch (Exception ex) {
             if (tx != null) {
@@ -171,7 +171,8 @@ public class ListService {
         } finally {
             session.close();
         }
-        return patientAppointmentId;
+        System.out.println(p.getId().getPatientAppointmentsId()+1);
+        return (p.getId().getPatientAppointmentsId()+1);
     }
 
 }

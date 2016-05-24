@@ -39,14 +39,15 @@ public class RegisterAppointmentServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    public Date convertStringToDate(String appointmentDate) {
+        public Date convertStringToDate(String birthDate) {
         Date date = null;
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            date = format.parse(appointmentDate);
+            date = format.parse(birthDate);
         } catch (ParseException ex) {
             System.out.println(ex);
         }
+        System.out.println("Fecha del servlet paciente: "+date.toString());
         return date;
     }
     

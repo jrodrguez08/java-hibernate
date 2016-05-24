@@ -10,5 +10,7 @@ $(function () {
     
     $('#appointmentDate').datepicker();
     
+    $('#birthDateEdit').datepicker();
+    
 
 });

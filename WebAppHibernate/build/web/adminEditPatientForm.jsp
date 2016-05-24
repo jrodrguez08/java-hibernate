@@ -78,6 +78,14 @@
                                     <input type="text" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a">
                                 </div>
                                 <div class="form-group">
+                                    <label for="birthDateEdit">Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" id="birthDateEdit" name="birthDateEdit" data-date-format="mm/dd/yyyy" placeholder="Fecha de Nacimiento">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Direcci&oacute;n</label>
+                                    <input type="text" class="form-control" id="address" name="address" placeholder="Direcci&oacute;n">
+                                </div>
+                                <div class="form-group">
                                     <label for="phone">Tel&eacute;fono</label>
                                     <input type="text" class="form-control" id="phone" name="phone" placeholder="Tel&eacute;fono">
                                 </div>

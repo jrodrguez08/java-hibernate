@@ -93,6 +93,56 @@ public class RegisterService {
         return true;
     }
     
+    public boolean register(Patientrecord patientRecord) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        if (patientRecordExists(patientRecord)) {
+            return false;
+        }
+
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            session.saveOrUpdate(patientRecord);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return true;
+    }
+    
+    public boolean register(Patientappointments patientAppointments) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        if (patientAppointmentExists(patientAppointments)) {
+            return false;
+        }
+
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            session.saveOrUpdate(patientAppointments);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return true;
+    }
+    
     public boolean userExists(User user) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -156,6 +206,56 @@ public class RegisterService {
             Patient p = (Patient) query.uniqueResult();
             tx.commit();
             if (p != null) {
+                result = true;
+            }
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+    
+    public boolean patientRecordExists(Patientrecord patientRecord) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        boolean result = false;
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            Query query = session.createQuery("from Patientrecord where patientRecordId='" + patientRecord.getPatientRecordId() + "'");
+            Patientrecord pR = (Patientrecord) query.uniqueResult();
+            tx.commit();
+            if (pR != null) {
+                result = true;
+            }
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+    
+    public boolean patientAppointmentExists(Patientappointments patientAppointments) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        boolean result = false;
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            Query query = session.createQuery("from Patientappointments where patientAppointmentsId='" + Integer.parseInt(patientAppointments.getId().toString())+ "'and patientRecordId='" + patientAppointments.getPatientrecord().getPatientRecordId() +"'");
+            Patientappointments pA = (Patientappointments) query.uniqueResult();
+            tx.commit();
+            if (pA != null) {
                 result = true;
             }
         } catch (Exception ex) {

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/05/2016 08:51:15 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Patientrecord" table="patientrecord" catalog="proyecto" optimistic-lock="version">
+        <id name="patientRecordId" type="string">
+            <column name="patientRecordId" length="45" />
+            <generator class="foreign">
+                <param name="property">patient</param>
+            </generator>
+        </id>
+        <one-to-one name="patient" class="Model.Patient" constrained="true"></one-to-one>
+        <set name="patientappointmentses" table="patientappointments" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="patientRecordId" length="45" not-null="true" />
+            </key>
+            <one-to-many class="Model.Patientappointments" />
+        </set>
+    </class>
+</hibernate-mapping>

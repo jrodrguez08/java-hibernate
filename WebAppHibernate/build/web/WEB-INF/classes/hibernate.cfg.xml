@@ -8,6 +8,8 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
 	<property name="hibernate.enable_lazy_load_no_trans">true</property>
+    <mapping resource="Model/Patientrecord.hbm.xml"/>
+    <mapping resource="Model/Patientappointments.hbm.xml"/>
     <mapping resource="Model/Doctor.hbm.xml"/>
     <mapping resource="Model/Patient.hbm.xml"/>
     <mapping resource="Model/Admin.hbm.xml"/>

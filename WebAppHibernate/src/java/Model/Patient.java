@@ -1,5 +1,5 @@
 package Model;
-// Generated May 9, 2016 4:38:09 PM by Hibernate Tools 4.3.1
+// Generated 18/05/2016 08:50:39 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,16 +16,26 @@ public class Patient  implements java.io.Serializable {
      private String address;
      private String email;
      private String phone;
+     private Patientrecord patientrecord;
 
     public Patient() {
     }
 
+	
     public Patient(User user, Date birth, String address, String email, String phone) {
+        this.user = user;
+        this.birth = birth;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+    }
+    public Patient(User user, Date birth, String address, String email, String phone, Patientrecord patientrecord) {
        this.user = user;
        this.birth = birth;
        this.address = address;
        this.email = email;
        this.phone = phone;
+       this.patientrecord = patientrecord;
     }
    
     public String getUserId() {
@@ -69,6 +79,13 @@ public class Patient  implements java.io.Serializable {
     
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    public Patientrecord getPatientrecord() {
+        return this.patientrecord;
+    }
+    
+    public void setPatientrecord(Patientrecord patientrecord) {
+        this.patientrecord = patientrecord;
     }
 
 

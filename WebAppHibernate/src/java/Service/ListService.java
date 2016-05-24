@@ -70,6 +70,31 @@ public class ListService {
         return listPatient;
     }
     
+    public List<Patientappointments> getAllPatientsAppointments() {
+        List<Patientappointments> listPatientsAppointments = new ArrayList<>();
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            List patients = session.createQuery("from Patientappointments").list();
+            for (Iterator it = patients.iterator(); it.hasNext();) {
+                Patientappointments patientAppointments = (Patientappointments) it.next();
+                listPatientsAppointments.add(patientAppointments);
+            }
+            tx.commit();
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return listPatientsAppointments;
+    }
+    
     public Doctor getDoctor(String userId) {
         Doctor doctor = new Doctor();
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
@@ -95,6 +120,58 @@ public class ListService {
             session.close();
         }
         return doctor;
+    }
+    
+    public Patient getPatient(String userId) {
+        Patient patient = new Patient();
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            List patients = session.createQuery("from Patient").list();
+            for (Iterator it = patients.iterator(); it.hasNext();) {
+                Patient dummy = (Patient) it.next();
+                if(dummy.getUserId().equals(userId)){
+                    patient = dummy;
+                }
+            }
+            tx.commit();
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return patient;
+    }
+    
+    public int getLastPatientAppointmentId(String userId) {
+        int patientAppointmentId = 1;
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            List patientAppointments = session.createQuery("from PatientAppointments where patientRecordId='"+userId+"'").list();
+                for (Iterator it = patientAppointments.iterator(); it.hasNext();) {
+                    //Patientappointments dummy = (Patientappointments) it.next();
+                    patientAppointmentId = patientAppointmentId++;//Integer.parseInt(dummy.getId().toString()); 
+                }
+            tx.commit();
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return patientAppointmentId;
     }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 9, 2016 4:38:11 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 18/05/2016 08:51:15 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Model.Patient" table="patient" catalog="proyecto" optimistic-lock="version">
         <id name="userId" type="string">
@@ -23,5 +23,6 @@
         <property name="phone" type="string">
             <column name="phone" length="45" not-null="true" unique="true" />
         </property>
+        <one-to-one name="patientrecord" class="Model.Patientrecord"></one-to-one>
     </class>
 </hibernate-mapping>

@@ -228,6 +228,7 @@ public class RegisterService {
             tx = session.getTransaction();
             tx.begin();
             Query query = session.createQuery("from Patientrecord where patientRecordId='" + patientRecord.getPatientRecordId() + "'");
+            System.out.println(patientRecord.getPatientRecordId());
             Patientrecord pR = (Patientrecord) query.uniqueResult();
             tx.commit();
             if (pR != null) {
@@ -240,6 +241,7 @@ public class RegisterService {
         } finally {
             session.close();
         }
+        System.out.println(result);
         return result;
     }
 

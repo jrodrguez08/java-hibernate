@@ -75,7 +75,6 @@ public class RegisterAppointmentServlet extends HttpServlet {
             boolean resultPatientRecord = registerService.register(patientRecord);
             boolean resultPatientAppointments = registerService.register(patientAppointments);
             if (resultPatientRecord && resultPatientAppointments) {
-                System.out.println(patientId);
                 response.sendRedirect("doctorAppointmentAdded.jsp");
             } else {
                 response.sendRedirect("doctorAppointmentError.jsp");

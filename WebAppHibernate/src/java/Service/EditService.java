@@ -50,7 +50,6 @@ public class EditService {
         try {
             tx = session.beginTransaction();
             Patient pat = (Patient) session.get(Patient.class, userId);
-            System.out.println("agarro " + pat.getUserId());
             pat.setUser(patient.getUser());
             pat.setPhone(patient.getPhone());
             pat.setEmail(patient.getEmail());

@@ -154,15 +154,20 @@ public class ListService {
         Session session;
         session = sessionFactory.openSession();
         Transaction tx = null;
-        Patientappointments p = null;
+        int counter = 1;
         try {
             tx = session.getTransaction();
             tx.begin();
-            List patientAppointments = session.createQuery("from PatientAppointments where patientRecordId='"+userId+"'").list();
-               Iterator it = patientAppointments.iterator();
-               while(it.hasNext()){
-                   p = (Patientappointments) it.next();
-               }
+            List patientAppointments = session.createQuery("from Patientappointments").list();
+               for (Iterator it = patientAppointments.iterator(); it.hasNext();) {
+                Patientappointments dummy = (Patientappointments) it.next();
+                if(dummy.getPatientrecord().getPatientRecordId().equals(userId)){
+                    System.out.println(dummy.getPatientrecord().getPatientRecordId());
+                    System.out.println(userId);
+                    System.out.println(counter);
+                    counter++;
+                }
+            }
             tx.commit();
         } catch (Exception ex) {
             if (tx != null) {
@@ -171,8 +176,7 @@ public class ListService {
         } finally {
             session.close();
         }
-        System.out.println(p.getId().getPatientAppointmentsId()+1);
-        return (p.getId().getPatientAppointmentsId()+1);
+        return counter;
     }
 
 }

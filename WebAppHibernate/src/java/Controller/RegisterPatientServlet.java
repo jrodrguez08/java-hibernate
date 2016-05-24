@@ -41,7 +41,7 @@ public class RegisterPatientServlet extends HttpServlet {
      */
     public Date convertStringToDate(String birthDate) {
         Date date = null;
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
         try {
             date = format.parse(birthDate);
         } catch (ParseException ex) {

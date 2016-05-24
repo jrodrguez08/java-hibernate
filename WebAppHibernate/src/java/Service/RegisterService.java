@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
  * @author j.a.rodriguez.lopez
  */
 public class RegisterService {
-    
+
     public boolean register(User user) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -67,7 +67,7 @@ public class RegisterService {
         }
         return true;
     }
-    
+
     public boolean register(Patient patient) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -92,7 +92,7 @@ public class RegisterService {
         }
         return true;
     }
-    
+
     public boolean register(Patientrecord patientRecord) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -117,7 +117,7 @@ public class RegisterService {
         }
         return true;
     }
-    
+
     public boolean register(Patientappointments patientAppointments) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -142,7 +142,7 @@ public class RegisterService {
         }
         return true;
     }
-    
+
     public boolean userExists(User user) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -192,7 +192,7 @@ public class RegisterService {
         }
         return result;
     }
-    
+
     public boolean userExists(Patient patient) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -217,7 +217,7 @@ public class RegisterService {
         }
         return result;
     }
-    
+
     public boolean patientRecordExists(Patientrecord patientRecord) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -242,7 +242,7 @@ public class RegisterService {
         }
         return result;
     }
-    
+
     public boolean patientAppointmentExists(Patientappointments patientAppointments) {
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
@@ -252,7 +252,7 @@ public class RegisterService {
         try {
             tx = session.getTransaction();
             tx.begin();
-            Query query = session.createQuery("from Patientappointments where patientAppointmentsId='" + Integer.parseInt(patientAppointments.getId().toString())+ "'and patientRecordId='" + patientAppointments.getPatientrecord().getPatientRecordId() +"'");
+            Query query = session.createQuery("from Patientappointments where patientAppointmentsId='" + Integer.parseInt(patientAppointments.getId().toString()) + "'and patientRecordId='" + patientAppointments.getPatientrecord().getPatientRecordId() + "'");
             Patientappointments pA = (Patientappointments) query.uniqueResult();
             tx.commit();
             if (pA != null) {

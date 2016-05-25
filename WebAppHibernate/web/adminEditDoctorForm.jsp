@@ -64,7 +64,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <form id="" action="EditDoctorFormServlet" method="post">
+                            <form id="editDoctor" action="EditDoctorFormServlet" method="post">
                                 <div class="form-group">
                                     <label for="fullName">Nombre Completo</label>
                                     <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Nombre Completo">

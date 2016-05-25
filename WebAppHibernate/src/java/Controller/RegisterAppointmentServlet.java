@@ -14,6 +14,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -64,17 +66,24 @@ public class RegisterAppointmentServlet extends HttpServlet {
         
         ListService service = new ListService();
         Doctor doctor = service.getDoctor(doctorId);
-        Patient patient = service.getPatient(patientId);      
-        Patientrecord patientRecord = new Patientrecord(patient);       
+        Patient patient = service.getPatient(patientId);
+        Set patientappointmentses = new HashSet(patient.getPatientrecord().getPatientappointmentses());
+        Patientrecord patientRecord = new Patientrecord(patient,patientappointmentses);
+        patientRecord.setPatientRecordId(patientId);
+        
+        RegisterService registerService = new RegisterService();
+        registerService.patientRecordExists(patientRecord);
+        
+        
         PatientappointmentsId patientappointmentsId = new PatientappointmentsId(service.getLastPatientAppointmentId(patientId),patientId);
         
         Patientappointments patientAppointments = new Patientappointments(patientappointmentsId,doctor,patientRecord,date,time,description,results);
         
+        
         try {
-            RegisterService registerService = new RegisterService();
-            boolean resultPatientRecord = registerService.register(patientRecord);
+            registerService.register(patientRecord);
             boolean resultPatientAppointments = registerService.register(patientAppointments);
-            if (resultPatientRecord && resultPatientAppointments) {
+            if (resultPatientAppointments) {
                 response.sendRedirect("doctorAppointmentAdded.jsp");
             } else {
                 response.sendRedirect("doctorAppointmentError.jsp");

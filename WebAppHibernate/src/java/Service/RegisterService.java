@@ -218,8 +218,7 @@ public class RegisterService {
         return result;
     }
 
-    public boolean patientRecordExists(Patientrecord patientRecord) {
-        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+    public boolean patientRecordExists(Patientrecord patientRecord) {SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
         Session session;
         session = sessionFactory.openSession();
         boolean result = false;
@@ -241,7 +240,6 @@ public class RegisterService {
         } finally {
             session.close();
         }
-        System.out.println(result);
         return result;
     }
 

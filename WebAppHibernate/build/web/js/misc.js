@@ -5,12 +5,23 @@
  */
 
 $(function () {
-    
+
+    var nowDate = new Date();
+    var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
+
     $('#birthDate').datepicker();
-    
-    $('#appointmentDate').datepicker();
-    
+
+    $('#appointmentDate').datepicker({
+        startDate: today
+    });
+
     $('#birthDateEdit').datepicker();
-    
+
+    $('#appointmentTime').timepicker({
+        template: false,
+        showInputs: false,
+        minuteStep: 30
+    });
+
 
 });

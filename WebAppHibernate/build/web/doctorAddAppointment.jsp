@@ -21,6 +21,7 @@
         <link href="css/css/datepicker.css" rel="stylesheet" type="text/css"/>
         <link href="css/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/css/style.css">
         <title>Doctor - Agregar Cita</title>
     </head>
@@ -28,7 +29,7 @@
         ListService service = new ListService();
         List<Doctor> doctors = service.getAllDoctors();
         request.getSession().setAttribute("listDoctors", doctors);
-        
+
         ListService service2 = new ListService();
         List<Patient> patients = service2.getAllPatients();
         request.getSession().setAttribute("listPatients", patients);
@@ -79,8 +80,11 @@
                                     <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" data-date-format="mm/dd/yyyy" placeholder="Fecha de la cita">
                                 </div>
                                 <div class="form-group">
-                                    <label for="appointmentTime">Hora de la cita</label>
-                                    <input type="time" class="form-control" id="appointmentTime" name="appointmentTime" data-time-format="hh:mm" placeholder="Fecha de la cita">
+                                    <div class="bootstrap-timepicker">
+                                        <label for="appointmentTime">Hora de la cita</label>
+                                        <input type="text" class="form-control" id="appointmentTime" name="appointmentTime">
+                                        <i class="icon-time"></i>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <select class="selectpicker" id="selectEditDoctor" name="selectEditDoctor" title="Seleccione un M&eacute;dico">
@@ -117,6 +121,7 @@
         <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="js/jasny-bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-timepicker.min.js" type="text/javascript"></script>
         <script src="js/validations.js" type="text/javascript"></script>
         <script src="js/misc.js" type="text/javascript"></script>
     </body>

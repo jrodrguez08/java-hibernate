@@ -4,6 +4,7 @@
     Author     : Andrés
 --%>
 
+<%@page import="Model.Patient"%>
 <%@page import="Model.Patientappointments"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.Doctor"%>
@@ -23,8 +24,8 @@
     </head>
     <%
         ListService service = new ListService();
-        List<Patientappointments> appointments = service.getAllPatientsAppointments();
-        request.getSession().setAttribute("listPatientAppointments", appointments);
+        List<Patient> patients = service.getAllPatients();
+        request.getSession().setAttribute("listPatients", patients);
     %>
     <body>
         <nav class="navbar navbar-default">
@@ -66,15 +67,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <form id="selectDoctor" action="EditDoctorServlet" method="post">
+                            <form id="selectDoctor" action="EditAppointmentServlet" method="post">
                                 <div class="form-group">
-                                    <select class="selectpicker" id="selectEditDoctor" name="selectEditDoctor" title="Seleccione un M&eacute;dico">
-                                        <c:forEach items="${listDoctors}" var="doctor">
-                                            <option value="${doctor.userId}">${doctor.user.fullName}</option>
+                                    <select class="selectpicker" id="selectEditPatient" name="selectEditPatient" title="Seleccione un Paciente">
+                                        <c:forEach items="${listPatients}" var="patient">
+                                            <option value="${patient.userId}">${patient.user.fullName}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Editar</button>
+                                 <button type="submit" class="btn btn-primary">Continuar</button>
                             </form>
                         </div>
                     </div>

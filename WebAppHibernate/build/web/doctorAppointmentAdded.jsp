@@ -30,7 +30,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="doctorListAppointment.jsp">Listar Citas</a></li>
                         <li><a href="#">Consultar Citas</a></li>
-                        <li><a href="#">Editar Cita</a></li>
+                        <li><a href="doctorEditAppointment.jsp">Editar Cita</a></li>
                         <li><a href="#">Listar Expedientes</a></li>
                         <li><a href="#">Editar Expedientes</a></li>
                         <li><a href="doctorAddAppointment.jsp">Agregar Cita</a></li>

@@ -24,8 +24,9 @@
     </head>
     <%
         ListService service = new ListService();
-        List<Patient> patients = service.getAllPatients();
-        request.getSession().setAttribute("listPatients", patients);
+        String selectedPatient = request.getSession().getAttribute("patientToEdit").toString();
+        List<Patientappointments> patientAppointments = service.getAllPatientsAppointmentsByPatientId(selectedPatient);
+        request.getSession().setAttribute("listPatientAppointments", patientAppointments);
     %>
     <body>
         <nav class="navbar navbar-default">
@@ -67,15 +68,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <form id="selectDoctor" action="EditAppointmentServlet" method="post">
+                            <form id="selectDoctor" action="EditAppointmentServlet1" method="post">
                                 <div class="form-group">
-                                    <select class="selectpicker" id="selectEditPatient" name="selectEditPatient" title="Seleccione un Paciente">
-                                        <c:forEach items="${listPatients}" var="patient">
-                                            <option value="${patient.userId}">${patient.user.fullName}</option>
+                                    <select class="selectpicker" id="selectEditPatientAppointment" name="selectEditPatientAppointment" title="Seleccione una Cita">
+                                        <c:forEach items="${listPatientAppointments}" var="patientAppointment">
+                                            <option value="${patientAppointment.id.patientAppointmentsId}">${patientAppointment.id.patientAppointmentsId}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
-                                 <button type="submit" class="btn btn-primary">Continuar</button>
+                                 <button type="submit" class="btn btn-primary">Editar</button>
                             </form>
                         </div>
                     </div>

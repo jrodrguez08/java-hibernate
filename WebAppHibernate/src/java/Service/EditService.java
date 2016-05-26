@@ -90,5 +90,32 @@ public class EditService {
             session.close();
         }
     }
+    
+    public void edit(Patientappointments patientAppointments, PatientappointmentsId paID) {
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Patientappointments patApp = (Patientappointments) session.get(Patientappointments.class, paID);
+            patApp.setDate(patientAppointments.getDate());
+            patApp.setTime(patientAppointments.getTime());
+            patApp.setDoctor(patientAppointments.getDoctor());
+            patApp.setPatientrecord(patientAppointments.getPatientrecord());
+            patApp.setId(patientAppointments.getId());
+            patApp.setDescription(patientAppointments.getDescription());
+            patApp.setResults(patientAppointments.getResults());
+            session.update(patApp);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
 
 }

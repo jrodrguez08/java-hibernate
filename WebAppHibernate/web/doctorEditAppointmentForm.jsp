@@ -1,10 +1,10 @@
 <%-- 
-    Document   : doctorAddAppointment
-    Created on : 18/05/2016, 09:45:13 PM
+    Document   : doctorEditAppointmentForm
+    Created on : 25/05/2016, 08:15:25 PM
     Author     : Andrés
 --%>
 
-
+<%@page import="Model.Patientappointments"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.Patient"%>
 <%@page import="Model.Doctor"%>
@@ -33,6 +33,11 @@
         ListService service2 = new ListService();
         List<Patient> patients = service2.getAllPatients();
         request.getSession().setAttribute("listPatients", patients);
+        
+//        List<Patientappointments> appointmentId = request.getSession().getAttribute("appointmentToEdit");
+//        ListService service3 = new ListService();
+//        Patient patient = service3.getAllPatientsAppointmentsByPatientId(appointmentId);
+//        request.getSession().setAttribute("patientEditable", patient);
     %>
     <body>
         <nav class="navbar navbar-default">
@@ -70,11 +75,11 @@
             <div class="container">
                 <div class="col-md-12">
                     <div class="row">
-                        <h1 class="dashboard-title">Agregar Cita</h1>
+                        <h1 class="dashboard-title">Editar Cita</h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <form id="addAppointment" action="RegisterAppointmentServlet" method="post">
+                            <form id="addAppointment" action="EditAppointmentFormServlet" method="post">
                                 <div class="form-group">
                                     <label for="appointmentDate">Fecha de la cita</label>
                                     <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" data-date-format="mm/dd/yyyy" placeholder="Fecha de la cita">
@@ -107,6 +112,10 @@
                                 <div class="form-group">
                                     <label for="results">Resultados</label>
                                     <input type="text" class="form-control" id="results" name="results" placeholder="Resultados">
+                                </div>
+                                <div class="form-group hide">
+                                    <label for="appointmentToEdit">Cita</label>
+                                    <input type="text" class="form-control" id="appointmentToEdit" name="appointmentToEdit" value="${patientEditable.userId}" placeholder="Usuario">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Agregar</button> <a class="btn btn-default" href="doctor.jsp" role="button">Cancelar</a>
                             </form>

@@ -95,6 +95,33 @@ public class ListService {
         return listPatientsAppointments;
     }
     
+    public List<Patientappointments> getAllPatientsAppointmentsByPatientId(String patientId) {
+        List<Patientappointments> listPatientsAppointments = new ArrayList<>();
+        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        Session session;
+        session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.getTransaction();
+            tx.begin();
+            List patients = session.createQuery("from Patientappointments where patientRecordId='"+patientId+"'").list();
+            for (Iterator it = patients.iterator(); it.hasNext();) {
+                Patientappointments dummy = (Patientappointments) it.next();
+                if(dummy.getPatientrecord().getPatientRecordId().equals(patientId)){
+                listPatientsAppointments.add(dummy);
+                }
+            }
+            tx.commit();
+        } catch (Exception ex) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return listPatientsAppointments;
+    }
+    
     public Doctor getDoctor(String userId) {
         Doctor doctor = new Doctor();
         SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();

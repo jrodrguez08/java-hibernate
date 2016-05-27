@@ -1,6 +1,6 @@
 <%-- 
-    Document   : doctorListAppointment
-    Created on : 18/05/2016, 08:19:51 PM
+    Document   : doctorListAllAppointments
+    Created on : 26/05/2016, 08:08:18 PM
     Author     : Andrés
 --%>
 
@@ -19,11 +19,11 @@
         <link rel="stylesheet" href="css/css/bootstrap.min.css">
         <link href="css/css/datatables.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/css/style.css">
-        <title>Doctor - Listar Citas</title>
+        <title>Doctor - Listar Todas las Citas</title>
     </head>
     <%
         ListService service = new ListService();
-        List<Patientappointments> patientAppointments = service.getNextAppointmentsByDoctorId(request.getSession().getAttribute("currentUserId").toString());
+        List<Patientappointments> patientAppointments = service.getAllPatientsAppointments();
         request.getSession().setAttribute("listPatientsAppointments", patientAppointments);
     %>
     <body>

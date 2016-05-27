@@ -1,6 +1,6 @@
 <%-- 
-    Document   : doctorListAppointment
-    Created on : 18/05/2016, 08:19:51 PM
+    Document   : patientListPatientRecordByPatientForm
+    Created on : 26/05/2016, 10:41:48 PM
     Author     : Andrés
 --%>
 
@@ -19,11 +19,11 @@
         <link rel="stylesheet" href="css/css/bootstrap.min.css">
         <link href="css/css/datatables.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/css/style.css">
-        <title>Doctor - Listar Citas</title>
+        <title>Paciente - Listar Todas las Citas</title>
     </head>
     <%
         ListService service = new ListService();
-        List<Patientappointments> patientAppointments = service.getNextAppointmentsByDoctorId(request.getSession().getAttribute("currentUserId").toString());
+        List<Patientappointments> patientAppointments = service.getAllPatientsAppointmentsByPatientId(request.getSession().getAttribute("currentUserId").toString());
         request.getSession().setAttribute("listPatientsAppointments", patientAppointments);
     %>
     <body>
@@ -40,12 +40,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="doctorListAppointment.jsp">Listar Citas</a></li>
-                        <li><a href="doctorListAllAppointments.jsp">Consultar Citas</a></li>
-                        <li><a href="doctorEditAppointment.jsp">Editar Cita</a></li>
-                        <li><a href="doctorListPatientsRecords.jsp">Listar Expedientes</a></li>
-                        <li><a href="doctorListPatientRecordByPatient.jsp">Editar Expedientes</a></li>
-                        <li><a href="doctorAddAppointment.jsp">Agregar Cita</a></li>
+                        <li><a href="patientListPatientRecordByPatientForm.jsp">Consultar Expediente</a></li>
+                        <li><a href="patientListPatientRecordByPatientForm.jsp">Consultar Cita</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">

@@ -42,10 +42,10 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="doctorListAppointment.jsp">Listar Citas</a></li>
-                        <li><a href="#">Consultar Citas</a></li>
+                        <li><a href="doctorListAllAppointments.jsp">Consultar Citas</a></li>
                         <li><a href="doctorEditAppointment.jsp">Editar Cita</a></li>
-                        <li><a href="#">Listar Expedientes</a></li>
-                        <li><a href="#">Editar Expedientes</a></li>
+                        <li><a href="doctorListPatientsRecords.jsp">Listar Expedientes</a></li>
+                        <li><a href="doctorListPatientRecordByPatient.jsp">Editar Expedientes</a></li>
                         <li><a href="doctorAddAppointment.jsp">Agregar Cita</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">

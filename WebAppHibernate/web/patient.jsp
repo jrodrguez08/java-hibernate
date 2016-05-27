@@ -24,12 +24,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="admin.jsp">Herramienta M&eacute;dica</a>
+                    <a class="navbar-brand" href="patient.jsp">Herramienta M&eacute;dica</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Consultar Expediente</a></li>
-                        <li><a href="#">Consultar Cita</a></li>
+                        <li><a href="patientListPatientRecordByPatientForm.jsp">Consultar Expediente</a></li>
+                        <li><a href="patientListPatientRecordByPatientForm.jsp">Consultar Cita</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -56,12 +56,12 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <p class="text-center icon"><a href="#"><span class="glyphicon glyphicon-search"></a></span></p>
-                                        <p class="text-center"><a href="#">Consultar Expediente</a></p>
+                                        <p class="text-center icon"><a href="patientListPatientRecordByPatientForm.jsp"><span class="glyphicon glyphicon-search"></a></span></p>
+                                        <p class="text-center"><a href="patientListPatientRecordByPatientForm.jsp">Consultar Expediente</a></p>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <p class="text-center icon"><a href="#"><span class="glyphicon glyphicon-search"></a></span></p>
-                                        <p class="text-center"><a href="#">Consultar Cita</a></p>
+                                        <p class="text-center icon"><a href="patientListPatientRecordByPatientForm.jsp"><span class="glyphicon glyphicon-search"></a></span></p>
+                                        <p class="text-center"><a href="patientListPatientRecordByPatientForm.jsp">Consultar Cita</a></p>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : doctorListAppointment
-    Created on : 18/05/2016, 08:19:51 PM
+    Document   : doctorListPatientsRecords
+    Created on : 26/05/2016, 08:41:00 PM
     Author     : Andrés
 --%>
 
@@ -19,12 +19,12 @@
         <link rel="stylesheet" href="css/css/bootstrap.min.css">
         <link href="css/css/datatables.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/css/style.css">
-        <title>Doctor - Listar Citas</title>
+        <title>Doctor - Listar Expedientes</title>
     </head>
     <%
         ListService service = new ListService();
-        List<Patientappointments> patientAppointments = service.getNextAppointmentsByDoctorId(request.getSession().getAttribute("currentUserId").toString());
-        request.getSession().setAttribute("listPatientsAppointments", patientAppointments);
+        List<Patientrecord> patientsRecords = service.getAllPatientsRecords();
+        request.getSession().setAttribute("listPatientsRecords", patientsRecords);
     %>
     <body>
         <nav class="navbar navbar-default">
@@ -62,30 +62,20 @@
             <div class="container">
                 <div class="col-md-12">
                     <div class="row">
-                        <h1 class="dashboard-title">Lista de Citas</h1>
+                        <h1 class="dashboard-title">Lista Expedientes</h1>
                     </div>
                     <div class="row">
                         <div class="table-responsive">
                             <table id="patients" class="table">
                                 <thead>
-                                <th>Id Cita</th>
                                 <th>Expediente</th>
-                                <th>Id Doctor</th>
-                                <th>Facha</th>
-                                <th>Hora</th>
-                                <th>Descripci&oacute;n</th>
-                                <th>Resultados</th>
+                                <th>Paciente</th>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${listPatientsAppointments}" var="patientApp">
+                                    <c:forEach items="${listPatientsRecords}" var="patientsRec">
                                         <tr>
-                                            <td><c:out value="${patientApp.id.patientAppointmentsId}"></c:out></td>
-                                            <td><c:out value="${patientApp.id.patientRecordId}"></c:out></td>
-                                            <td><c:out value="${patientApp.doctor.user.userId}"></c:out></td>
-                                            <td><c:out value="${patientApp.date}"></c:out></td>
-                                            <td><c:out value="${patientApp.time}"></c:out></td>
-                                            <td><c:out value="${patientApp.description}"></c:out></td>
-                                            <td><c:out value="${patientApp.results}"></c:out></td>
+                                            <td><c:out value="${patientsRec.patientRecordId}"></c:out></td>
+                                            <td><c:out value="${patientsRec.patient.user.fullName}"></c:out></td>
                                             </tr>
                                     </c:forEach>
                                 </tbody>

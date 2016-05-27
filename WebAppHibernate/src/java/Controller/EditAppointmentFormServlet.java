@@ -65,8 +65,9 @@ public class EditAppointmentFormServlet extends HttpServlet {
         String patientId = request.getParameter("selectEditPatient");
         String description = request.getParameter("description");
         String results = request.getParameter("results");
-        System.out.println("Esto: "+request.getParameter("appointmentToEdit"));
-        int appointmentId = Integer.parseInt(request.getParameter("appointmentToEdit"));
+        String test = (String) request.getSession().getAttribute("appointmentToEdit");
+        System.out.println("Esto: " + test);
+        Integer appointmentId = Integer.parseInt(test);
         
         ListService service = new ListService();
         Doctor doctor = service.getDoctor(doctorId);

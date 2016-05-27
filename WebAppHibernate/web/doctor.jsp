@@ -29,10 +29,10 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="doctorListAppointment.jsp">Listar Citas</a></li>
-                        <li><a href="#">Consultar Citas</a></li>
+                        <li><a href="doctorListAllAppointments.jsp">Consultar Citas</a></li>
                         <li><a href="doctorEditAppointment.jsp">Editar Cita</a></li>
-                        <li><a href="#">Listar Expedientes</a></li>
-                        <li><a href="#">Editar Expedientes</a></li>
+                        <li><a href="doctorListPatientsRecords.jsp">Listar Expedientes</a></li>
+                        <li><a href="doctorListPatientRecordByPatient.jsp">Editar Expedientes</a></li>
                         <li><a href="doctorAddAppointment.jsp">Agregar Cita</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -61,8 +61,8 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-4 col-sm-4 col-md-4">
-                                    <p class="text-center icon"><a href="adminListDoctor.jsp"><span class="glyphicon glyphicon-search"></a></span></p>
-                                    <p class="text-center"><a href="adminListDoctor.jsp">Buscar Citas</a></p>
+                                    <p class="text-center icon"><a href="doctorListAppointment.jsp.jsp"><span class="glyphicon glyphicon-search"></a></span></p>
+                                    <p class="text-center"><a href="doctorListAppointment.jsp">Buscar Citas</a></p>
                                 </div>
                                 <div class="col-xs-4 col-sm-4 col-md-4">
                                     <p class="text-center icon"><a href="doctorAddAppointment.jsp"><span class="glyphicon glyphicon-plus-sign"></a></span></p>

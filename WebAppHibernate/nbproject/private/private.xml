@@ -11,34 +11,6 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/Doctor.hbm.xml</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/Patient.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/User.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/doctorAddAppointment.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/doctor.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Controller/NewHibernateUtil.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/adminAddPatient.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/admin.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/doctorAppointmentAdded.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/hibernate.reveng.xml</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/adminEditDoctor.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Service/EditService.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/doctorListAppointment.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Controller/RegisterDoctorServlet.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Controller/RegisterPatientServlet.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Service/ListService.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/Patientappointments.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/doctorAppointmentError.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/Doctor.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Controller/EditDoctorServlet.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Controller/EditDoctorFormServlet.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Service/RegisterService.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Controller/RegisterAppointmentServlet.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/web/doctorEditAppointment.jsp</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/Patientrecord.java</file>
-            <file>file:/C:/Users/Andrés/Desktop/WebAppHibernate/src/java/Model/PatientappointmentsId.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

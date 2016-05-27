@@ -74,16 +74,19 @@ public class LoginServlet extends HttpServlet {
                 case 'A':
                     request.getSession().setAttribute("user", user);
                     request.getSession().setAttribute("currentUser", currentUser);
+                    request.getSession().setAttribute("currentUserId", userId);
                     response.sendRedirect("admin.jsp");
                     break;
                 case 'D':
                     request.getSession().setAttribute("user", user);
                     request.getSession().setAttribute("currentUser", currentUser);
+                    request.getSession().setAttribute("currentUserId", userId);
                     response.sendRedirect("doctor.jsp");
                     break;
                 case 'P':
                     request.getSession().setAttribute("user", user);
                     request.getSession().setAttribute("currentUser", currentUser);
+                    request.getSession().setAttribute("currentUserId", userId);
                     response.sendRedirect("patient.jsp");
                     break;
             }

@@ -4,8 +4,6 @@
     Author     : Andrés
 --%>
 
-
-
 <%@page import="Service.*"%>
 <%@page import="Model.*"%>
 <%@page import="net.sf.ehcache.hibernate.HibernateUtil"%>
@@ -25,7 +23,7 @@
     </head>
     <%
         ListService service = new ListService();
-        List<Patientappointments> patientAppointments = service.getAllPatientsAppointments();
+        List<Patientappointments> patientAppointments = service.getNextAppointmentsByDoctorId(request.getSession().getAttribute("currentUserId").toString());
         request.getSession().setAttribute("listPatientsAppointments", patientAppointments);
     %>
     <body>
@@ -68,24 +66,26 @@
                     </div>
                     <div class="row">
                         <div class="table-responsive">
-                            <table id="appointments" class="table">
+                            <table id="patients" class="table">
                                 <thead>
-                                <th>Fechar</th>
+                                <th>Id Cita</th>
+                                <th>Expediente</th>
+                                <th>Id Doctor</th>
+                                <th>Facha</th>
                                 <th>Hora</th>
-                                <th>Doctor</th>
-                                <th>Paciente</th>
                                 <th>Descripci&oacute;n</th>
                                 <th>Resultados</th>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${listPatientsAppointments}" var="appointment">
+                                    <c:forEach items="${listPatientsAppointments}" var="patientApp">
                                         <tr>
-                                            <td><c:out value="${appointment.date}"></c:out></td>
-                                            <td><c:out value="${appointment.time}"></c:out></td>
-                                            <td><c:out value="${appointment.doctor.user.fullName}"></c:out></td>
-                                            <td><c:out value="${appointment.patientRecord.patient.user.fullName}"></c:out></td>
-                                            <td><c:out value="${appointment.description}"></c:out></td>
-                                            <td><c:out value="${appointment.results}"></c:out></td>
+                                            <td><c:out value="${patientApp.id.patientAppointmentsId}"></c:out></td>
+                                            <td><c:out value="${patientApp.id.patientRecordId}"></c:out></td>
+                                            <td><c:out value="${patientApp.doctor.user.userId}"></c:out></td>
+                                            <td><c:out value="${patientApp.date}"></c:out></td>
+                                            <td><c:out value="${patientApp.time}"></c:out></td>
+                                            <td><c:out value="${patientApp.description}"></c:out></td>
+                                            <td><c:out value="${patientApp.results}"></c:out></td>
                                             </tr>
                                     </c:forEach>
                                 </tbody>

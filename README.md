@@ -1,4 +1,4 @@
-"# java-hibernate" 
+# java-hibernate 
 
 Registry application based on java-hibernate
 
